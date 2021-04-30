@@ -1,0 +1,465 @@
+[2021-04-28 08:46:03] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = laravel and table_name = migrations and table_type = 'BASE TABLE') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = laravel and table_name = migrations and table_type = 'BASE TABLE') at /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669)
+[stacktrace]
+#0 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(590): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(91): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#13 /home/steve/ajax-crud/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /home/steve/ajax-crud/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/steve/ajax-crud/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/steve/ajax-crud/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/steve/ajax-crud/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) at /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct('mysql:host=127....', 'root', 'ajaxcrude', Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', 'ajaxcrude', Array)
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(924): call_user_func(Object(Closure))
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(959): Illuminate\\Database\\Connection->getPdo()
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(404): Illuminate\\Database\\Connection->getReadPdo()
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(330): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from i...', Array)
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(590): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(91): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#23 /home/steve/ajax-crud/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /home/steve/ajax-crud/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /home/steve/ajax-crud/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /home/steve/ajax-crud/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /home/steve/ajax-crud/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2021-04-28 11:28:41] local.ERROR: Undefined property: App\Http\Controllers\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6ImwyWEFmT3oyT2JveXlGOCtjSWRcL0FnPT0iLCJ2YWx1ZSI6ImswRGF2a0JSXC9nb3pFNTZZSjloY2E5MmNIaCsyWWlEcUVYb1E2OUgxZ1htYncxbWRSb2lCMVdVMDBVYjRpR3NoM0p0OTAwbWlTb01MVTBrdjFNUm1QZGJ5VHpEVEZEWGlXSXRwWGFJRmhaRVwvOHpIeTUxUzg1WU9YVEFDRDFCeDEiLCJtYWMiOiI3YzU4ZjUxOWQ0ZWUwMTZjYTI4ODQzZTNkNDNhMWEzZmE0MDViNDAwYjg3YjQ5ZGY5NTc3MmI5MDE1ZDYwYWQ2In0%3D; laravel_session=eyJpdiI6ImNJUnUzaVMwS0FDbHo1SXJNbSthaEE9PSIsInZhbHVlIjoiYUlCVXVNTnhFUnZOclFobStBZXNVeXcrUjRldFNnWUNwR3J0Sm1FUHVtOXRoMHBZeVNzZWpIVFJEbWQ5SGRnTTIrWlM3VlRqRFo1R2V3TU1UYVBiT3NvSWF4SE1odElsd1EzVmJxdFV0VTVFZVFFWE9SSWQyeDBhV2d1bm1QN2UiLCJtYWMiOiJkOTI3NGFmY2RiNzczNDNjOTQ0NDMxNzliMmU1Yzg2ZjExMjQwYTA2OTBiMWE4MjExOTJiNWQ0NWMzODU3ODE4In0%3D
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ {"exception":"[object] (ErrorException(code: 0): Undefined property: App\\Http\\Controllers\\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6ImwyWEFmT3oyT2JveXlGOCtjSWRcL0FnPT0iLCJ2YWx1ZSI6ImswRGF2a0JSXC9nb3pFNTZZSjloY2E5MmNIaCsyWWlEcUVYb1E2OUgxZ1htYncxbWRSb2lCMVdVMDBVYjRpR3NoM0p0OTAwbWlTb01MVTBrdjFNUm1QZGJ5VHpEVEZEWGlXSXRwWGFJRmhaRVwvOHpIeTUxUzg1WU9YVEFDRDFCeDEiLCJtYWMiOiI3YzU4ZjUxOWQ0ZWUwMTZjYTI4ODQzZTNkNDNhMWEzZmE0MDViNDAwYjg3YjQ5ZGY5NTc3MmI5MDE1ZDYwYWQ2In0%3D; laravel_session=eyJpdiI6ImNJUnUzaVMwS0FDbHo1SXJNbSthaEE9PSIsInZhbHVlIjoiYUlCVXVNTnhFUnZOclFobStBZXNVeXcrUjRldFNnWUNwR3J0Sm1FUHVtOXRoMHBZeVNzZWpIVFJEbWQ5SGRnTTIrWlM3VlRqRFo1R2V3TU1UYVBiT3NvSWF4SE1odElsd1EzVmJxdFV0VTVFZVFFWE9SSWQyeDBhV2d1bm1QN2UiLCJtYWMiOiJkOTI3NGFmY2RiNzczNDNjOTQ0NDMxNzliMmU1Yzg2ZjExMjQwYTA2OTBiMWE4MjExOTJiNWQ0NWMzODU3ODE4In0%3D
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ at /home/steve/ajax-crud/app/Http/Controllers/PostController.php:47)
+[stacktrace]
+#0 /home/steve/ajax-crud/app/Http/Controllers/PostController.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined prope...', '/home/steve/aja...', 47, Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\PostController->store(Object(Illuminate\\Http\\Request))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PostController), 'store')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(681): Illuminate\\Routing\\Route->run()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/steve/ajax-crud/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /home/steve/ajax-crud/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 /home/steve/ajax-crud/server.php(21): require_once('/home/steve/aja...')
+#41 {main}
+"} 
+[2021-04-28 11:28:42] local.ERROR: Undefined property: App\Http\Controllers\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IndqVHprd0NlQ1A0SnQ1aWpWQmFuV1E9PSIsInZhbHVlIjoiRTdIc2hVWlhyUkg0aVdSdlRiZ0ZWdkI1WVU2Q1ZQMzgrcHNJSDBWank3YzVISGh6M2U3RHJ2V3BxZTRLUkN4OW1kZmhPSlZPWThVdll0a2dDSEFBXC85bGtneThYU29HbkZNWU41MWZGeDdKZFVpOEVkUjFWRXA5bW05eVpIWDVlIiwibWFjIjoiNjlkZjdjZGRjMTNkMGJkODk4MTVmMGE4MGQ3MmUzNjdlZjc0ZDhkM2Q2NzI5NjFjN2Y4NzlhNjRjOTc4MzQ2YyJ9; laravel_session=eyJpdiI6IktCWlVxaVhuWndybW4zdVBUcG80cHc9PSIsInZhbHVlIjoiMnRrOTZldDRLMkVQbGkwVlpMaEd2UHNtNGhxTzlEV3lxRmtjWGFZRjhIZnA2WlwveW1kdndSYXhnSXVRZEFaUmhGVWFsdzVuQUM4YlJlc2ZGSGhQMUJVcm01WHRlRUhuY0hGaTBleEZ6SFpjY2QyVWs5bUV3UlNkaUhzYmpqTkpsIiwibWFjIjoiMmFjYTNmNWQ4NTJmZTYxZTZlYTcwMWY1YTY5YTcyNjkyNmMzZDg2OTUzYWFlMTJlNDJkM2ZhYTUzMzY4NTcwYyJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ {"exception":"[object] (ErrorException(code: 0): Undefined property: App\\Http\\Controllers\\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IndqVHprd0NlQ1A0SnQ1aWpWQmFuV1E9PSIsInZhbHVlIjoiRTdIc2hVWlhyUkg0aVdSdlRiZ0ZWdkI1WVU2Q1ZQMzgrcHNJSDBWank3YzVISGh6M2U3RHJ2V3BxZTRLUkN4OW1kZmhPSlZPWThVdll0a2dDSEFBXC85bGtneThYU29HbkZNWU41MWZGeDdKZFVpOEVkUjFWRXA5bW05eVpIWDVlIiwibWFjIjoiNjlkZjdjZGRjMTNkMGJkODk4MTVmMGE4MGQ3MmUzNjdlZjc0ZDhkM2Q2NzI5NjFjN2Y4NzlhNjRjOTc4MzQ2YyJ9; laravel_session=eyJpdiI6IktCWlVxaVhuWndybW4zdVBUcG80cHc9PSIsInZhbHVlIjoiMnRrOTZldDRLMkVQbGkwVlpMaEd2UHNtNGhxTzlEV3lxRmtjWGFZRjhIZnA2WlwveW1kdndSYXhnSXVRZEFaUmhGVWFsdzVuQUM4YlJlc2ZGSGhQMUJVcm01WHRlRUhuY0hGaTBleEZ6SFpjY2QyVWs5bUV3UlNkaUhzYmpqTkpsIiwibWFjIjoiMmFjYTNmNWQ4NTJmZTYxZTZlYTcwMWY1YTY5YTcyNjkyNmMzZDg2OTUzYWFlMTJlNDJkM2ZhYTUzMzY4NTcwYyJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ at /home/steve/ajax-crud/app/Http/Controllers/PostController.php:47)
+[stacktrace]
+#0 /home/steve/ajax-crud/app/Http/Controllers/PostController.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined prope...', '/home/steve/aja...', 47, Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\PostController->store(Object(Illuminate\\Http\\Request))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PostController), 'store')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(681): Illuminate\\Routing\\Route->run()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/steve/ajax-crud/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /home/steve/ajax-crud/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 /home/steve/ajax-crud/server.php(21): require_once('/home/steve/aja...')
+#41 {main}
+"} 
+[2021-04-28 11:28:45] local.ERROR: Undefined property: App\Http\Controllers\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6ImpDVEwyYWhXdDRUb1wvS0pidVZQOHFnPT0iLCJ2YWx1ZSI6InRnWGFnS2dibzZPS09haUlRZlZrTTV1S3ZtWGlDT1RqWFpCZHFDTUhZM0dtUmRkR1Q3aDVDcHBMWjdkeThaeWJOT0ZDNnRjNzVlUTVMKzVkS0NLc2lETjk1b1NCV21uY2FzdG5nbTN2Vjd4VmtNVjd0YWlJS042Q29qaURjbksxIiwibWFjIjoiZTIyNmVmNTA0MzgxYWY2MmE5NzljMWZkYzdlODU0NmFmM2ZjMmZjMzU4MWI3MzcxM2MwZmY0ZTIwMTYzOWI5YiJ9; laravel_session=eyJpdiI6IlJxcXU2M2tEUUxlV1wvRDRLaVVcLzZ6Zz09IiwidmFsdWUiOiJ6aWd0WWZTQVN5STlGVmYya3JlamgwOGE1bUgwK2pJd1NsV1JleGdyazNHUlJkVERBR2k4NndYTHZcL3kwVmxWM2xLR3pzakMyTHNRU05FNEZUSnpsZ1hhZk5jOW5VWXlldDVndjVvampcLytOMlY2bmlsZGVRdHlKY0FwZVU3djRzIiwibWFjIjoiNzkwZmEyOTE0OWYwNzIwOTI5MTQ1NGMzMTliNDE5MDU0MWM4ZDlmZjA2OTU1ZjU5OTUyZTY2YjQzNTUwOGY2YyJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ {"exception":"[object] (ErrorException(code: 0): Undefined property: App\\Http\\Controllers\\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6ImpDVEwyYWhXdDRUb1wvS0pidVZQOHFnPT0iLCJ2YWx1ZSI6InRnWGFnS2dibzZPS09haUlRZlZrTTV1S3ZtWGlDT1RqWFpCZHFDTUhZM0dtUmRkR1Q3aDVDcHBMWjdkeThaeWJOT0ZDNnRjNzVlUTVMKzVkS0NLc2lETjk1b1NCV21uY2FzdG5nbTN2Vjd4VmtNVjd0YWlJS042Q29qaURjbksxIiwibWFjIjoiZTIyNmVmNTA0MzgxYWY2MmE5NzljMWZkYzdlODU0NmFmM2ZjMmZjMzU4MWI3MzcxM2MwZmY0ZTIwMTYzOWI5YiJ9; laravel_session=eyJpdiI6IlJxcXU2M2tEUUxlV1wvRDRLaVVcLzZ6Zz09IiwidmFsdWUiOiJ6aWd0WWZTQVN5STlGVmYya3JlamgwOGE1bUgwK2pJd1NsV1JleGdyazNHUlJkVERBR2k4NndYTHZcL3kwVmxWM2xLR3pzakMyTHNRU05FNEZUSnpsZ1hhZk5jOW5VWXlldDVndjVvampcLytOMlY2bmlsZGVRdHlKY0FwZVU3djRzIiwibWFjIjoiNzkwZmEyOTE0OWYwNzIwOTI5MTQ1NGMzMTliNDE5MDU0MWM4ZDlmZjA2OTU1ZjU5OTUyZTY2YjQzNTUwOGY2YyJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=++++++++++++++++++++++++vvvv&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ at /home/steve/ajax-crud/app/Http/Controllers/PostController.php:47)
+[stacktrace]
+#0 /home/steve/ajax-crud/app/Http/Controllers/PostController.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined prope...', '/home/steve/aja...', 47, Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\PostController->store(Object(Illuminate\\Http\\Request))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PostController), 'store')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(681): Illuminate\\Routing\\Route->run()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/steve/ajax-crud/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /home/steve/ajax-crud/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 /home/steve/ajax-crud/server.php(21): require_once('/home/steve/aja...')
+#41 {main}
+"} 
+[2021-04-28 11:47:43] local.ERROR: Undefined property: App\Http\Controllers\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   80
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IlhPdnVlaCtPekdWUlZ4UWU3VnpDMWc9PSIsInZhbHVlIjoieXRFTTBcL0tjRXRiVktTbzMrQnpqZnhJT0MwbE9zWmtycVFTdFZLWVJXYTVFWEs2eVVaNVwvZlRqQ1F1WjFYWnVJREJzOWRFNnAwTHNUQjF2R0dtVTBUOTg0K0tzNDdFajlWRWUxXC9WTWNJV0NWdlUySEVZRVp2NG1VNEQ2SFpJdzUiLCJtYWMiOiJjODY1ODNhMGRhMDkyZTY3ZmFkNjhlOGIxZDNjMWQ0ODRlZTc4YTUzYjMyM2M1YTYxNTMxMjZkMTIzOTAxZjNiIn0%3D; laravel_session=eyJpdiI6ImhER3lZY2EwZjJ0eTZKUWg2Z0FMcGc9PSIsInZhbHVlIjoiSlRHQU44b3NVTjhDWHJKRlcwMXk0Ujd3UjI2S2thR0hpOXdvQW13WURHVjgySG9NT1ExaU9yRjlQUDYzQ0ZOYjhNdTRJVTh2NjNVUEZ5TFdJQzd1TFJjVUFJelIxczZDTFBFUDRsdFlab0pkeHU4WCtcL2JXZmg2VUJjSFA5dDh4IiwibWFjIjoiMzQ1NmU4NjE1ZTMxMTUyMzQ1NWY4OWY1YmU5NWIwM2IzMjRjMjgwM2JkNzY4ZWE2YmRiYmFlOGIwN2Q4NTYyYSJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=gg&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ {"exception":"[object] (ErrorException(code: 0): Undefined property: App\\Http\\Controllers\\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   80
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IlhPdnVlaCtPekdWUlZ4UWU3VnpDMWc9PSIsInZhbHVlIjoieXRFTTBcL0tjRXRiVktTbzMrQnpqZnhJT0MwbE9zWmtycVFTdFZLWVJXYTVFWEs2eVVaNVwvZlRqQ1F1WjFYWnVJREJzOWRFNnAwTHNUQjF2R0dtVTBUOTg0K0tzNDdFajlWRWUxXC9WTWNJV0NWdlUySEVZRVp2NG1VNEQ2SFpJdzUiLCJtYWMiOiJjODY1ODNhMGRhMDkyZTY3ZmFkNjhlOGIxZDNjMWQ0ODRlZTc4YTUzYjMyM2M1YTYxNTMxMjZkMTIzOTAxZjNiIn0%3D; laravel_session=eyJpdiI6ImhER3lZY2EwZjJ0eTZKUWg2Z0FMcGc9PSIsInZhbHVlIjoiSlRHQU44b3NVTjhDWHJKRlcwMXk0Ujd3UjI2S2thR0hpOXdvQW13WURHVjgySG9NT1ExaU9yRjlQUDYzQ0ZOYjhNdTRJVTh2NjNVUEZ5TFdJQzd1TFJjVUFJelIxczZDTFBFUDRsdFlab0pkeHU4WCtcL2JXZmg2VUJjSFA5dDh4IiwibWFjIjoiMzQ1NmU4NjE1ZTMxMTUyMzQ1NWY4OWY1YmU5NWIwM2IzMjRjMjgwM2JkNzY4ZWE2YmRiYmFlOGIwN2Q4NTYyYSJ9
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=IT+FIRM&description=gg&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ at /home/steve/ajax-crud/app/Http/Controllers/PostController.php:47)
+[stacktrace]
+#0 /home/steve/ajax-crud/app/Http/Controllers/PostController.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined prope...', '/home/steve/aja...', 47, Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\PostController->store(Object(Illuminate\\Http\\Request))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PostController), 'store')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(681): Illuminate\\Routing\\Route->run()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/steve/ajax-crud/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /home/steve/ajax-crud/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 /home/steve/ajax-crud/server.php(21): require_once('/home/steve/aja...')
+#41 {main}
+"} 
+[2021-04-28 12:00:52] local.ERROR: Undefined property: App\Http\Controllers\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IklUUTJjZUJZOW40Njl5b3Q3dWJHcmc9PSIsInZhbHVlIjoieG1qU3lvUUNYMkJ0MXhGNWI1R3FWR1pBUXN0U29tUDBcL29Ka3VqVklmRjhUYzVKbjVcL2lzeXlsSGtcL2M2N01vRjJla1BjdllYaHpZMjU3NzVjUDh2dTl6aWlDNFpKaXNaZHhmS090cE04N2dIbVMrRU5xQzhlNEpVbHl6VURaUGkiLCJtYWMiOiJiZTQ4OGU1M2FkNGVjNDQwOGZiOTUxNmVlZmU3NzVhZDYwNzc4ODQyNDBiZDA1MzgzMGJiODA4ZjA2ODVjMWMwIn0%3D; laravel_session=eyJpdiI6IkZUblZ0cGZDQURXK1psUDZ1XC96NVNRPT0iLCJ2YWx1ZSI6IjNyUkNDTHl3TGtwTkVkZkVQNUpoQUVYQlN0MndSaGd5VUpNSFczd2s1ZmpwWU12V1wvamg5bndJaVNPM1F1VTh1S1hWcEZhcDhXZFJwcGlxeFo2N3pqNDUyenBBNUo0a2tCNHJnRXNrR1dHcUtLVG11Yk0zRXlkbDFJckNMdDZTUCIsIm1hYyI6ImZkOWY5YzBhZTY5ZmY2MmVmOTUzZmNhZGI0NDg2YTAyYWJlNzQ3ZmVjYjM5YmMxNjcwZDRlMmNhZjNkMDBkOGIifQ%3D%3D
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=12345dw1&description=++++++++++++++++++++++++vvs&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ {"exception":"[object] (ErrorException(code: 0): Undefined property: App\\Http\\Controllers\\PostController::$POST /posts HTTP/1.1
+Accept:           */*
+Accept-Encoding:  gzip, deflate, br
+Accept-Language:  en-US,en;q=0.9
+Connection:       keep-alive
+Content-Length:   106
+Content-Type:     application/x-www-form-urlencoded; charset=UTF-8
+Cookie:           XSRF-TOKEN=eyJpdiI6IklUUTJjZUJZOW40Njl5b3Q3dWJHcmc9PSIsInZhbHVlIjoieG1qU3lvUUNYMkJ0MXhGNWI1R3FWR1pBUXN0U29tUDBcL29Ka3VqVklmRjhUYzVKbjVcL2lzeXlsSGtcL2M2N01vRjJla1BjdllYaHpZMjU3NzVjUDh2dTl6aWlDNFpKaXNaZHhmS090cE04N2dIbVMrRU5xQzhlNEpVbHl6VURaUGkiLCJtYWMiOiJiZTQ4OGU1M2FkNGVjNDQwOGZiOTUxNmVlZmU3NzVhZDYwNzc4ODQyNDBiZDA1MzgzMGJiODA4ZjA2ODVjMWMwIn0%3D; laravel_session=eyJpdiI6IkZUblZ0cGZDQURXK1psUDZ1XC96NVNRPT0iLCJ2YWx1ZSI6IjNyUkNDTHl3TGtwTkVkZkVQNUpoQUVYQlN0MndSaGd5VUpNSFczd2s1ZmpwWU12V1wvamg5bndJaVNPM1F1VTh1S1hWcEZhcDhXZFJwcGlxeFo2N3pqNDUyenBBNUo0a2tCNHJnRXNrR1dHcUtLVG11Yk0zRXlkbDFJckNMdDZTUCIsIm1hYyI6ImZkOWY5YzBhZTY5ZmY2MmVmOTUzZmNhZGI0NDg2YTAyYWJlNzQ3ZmVjYjM5YmMxNjcwZDRlMmNhZjNkMDBkOGIifQ%3D%3D
+Host:             127.0.0.1:8000
+Origin:           http://127.0.0.1:8000
+Referer:          http://127.0.0.1:8000/posts
+Sec-Fetch-Dest:   empty
+Sec-Fetch-Mode:   cors
+Sec-Fetch-Site:   same-origin
+User-Agent:       Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+X-Requested-With: XMLHttpRequest
+Cookie: XSRF-TOKEN=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ; laravel_session=Jrq2PktscNZXeMLoKqsfDDcRwINIXQGdMrMKuGhR
+
+id=&title=12345dw1&description=++++++++++++++++++++++++vvs&_token=rHe3RlXkzapTrQDrISzy5mREXH9PbhXuuNlw0SCJ at /home/steve/ajax-crud/app/Http/Controllers/PostController.php:47)
+[stacktrace]
+#0 /home/steve/ajax-crud/app/Http/Controllers/PostController.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined prope...', '/home/steve/aja...', 47, Array)
+#1 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\PostController->store(Object(Illuminate\\Http\\Request))
+#2 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#3 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PostController), 'store')
+#4 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(681): Illuminate\\Routing\\Route->run()
+#6 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Routing/Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /home/steve/ajax-crud/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /home/steve/ajax-crud/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 /home/steve/ajax-crud/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 /home/steve/ajax-crud/server.php(21): require_once('/home/steve/aja...')
+#41 {main}
+"} 
